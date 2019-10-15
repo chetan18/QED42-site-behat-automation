@@ -1,0 +1,19 @@
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+      contexts:
+        - FeatureContext
+        - Screenshot
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MinkContext
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://www.qed42.com
+      goutte: ~
+      selenium2:
+         browser: chrome
+         wd_host: 'localhost:4444/wd/hub'
